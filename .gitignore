@@ -1,0 +1,24 @@
+# Kotlin/Gradle/Android Ignore
+
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+
+# Gradle Wrapper
+.gradle/
+**/build/
+
+# Android Studio
+.idea/
+*.iml
+
+# Keystore
+*.jks
+
+# Misc
+*.log
+
