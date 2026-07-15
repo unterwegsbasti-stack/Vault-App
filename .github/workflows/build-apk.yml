@@ -28,14 +28,17 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
 
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
+      - name: Fix gradlew permissions
+        run: |
+          ls -la gradlew
+          chmod +x gradlew
+          ls -la gradlew
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --stacktrace
+        run: bash ./gradlew assembleDebug --stacktrace
 
       - name: Build Release APK
-        run: ./gradlew assembleRelease --stacktrace
+        run: bash ./gradlew assembleRelease --stacktrace
 
       - name: Upload Debug APK Artifact
         if: success()
